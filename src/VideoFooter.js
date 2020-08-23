@@ -1,6 +1,7 @@
 import React from 'react'
 import "./VideoFooter.css";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
+import Ticker from "react-ticker";
 
 function VideoFooter() {
     return (
@@ -8,7 +9,20 @@ function VideoFooter() {
             <div className="videoFooter__text">
                 <h3>@bipinkarki</h3>
                 <p>This is description</p>
-                <MusicNoteIcon className="videoFooter__icon" />
+                <div className="videoFooter__ticker">
+                    <MusicNoteIcon className="videoFooter__icon" />
+                    <Ticker
+                        mode="smooth"
+                    >
+                        {({ index }) => (
+                            <>
+                                <p>Yooo what's up!!! </p>
+                            </>
+                        )}
+
+                    </Ticker>
+                </div>
+
             </div>
             <img
                 className="videoFooter__record"
