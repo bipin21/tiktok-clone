@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      <h1>Tiktok clone</h1>
 
       <div className="app__videos">
         <Video />
@@ -13,6 +12,7 @@ function App() {
         <Video />
         <Video />
       </div>
+
     </div>
   );
 }
