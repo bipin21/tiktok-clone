@@ -3,12 +3,12 @@ import "./VideoFooter.css";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import Ticker from "react-ticker";
 
-function VideoFooter() {
+function VideoFooter({channel, description, song}) {
     return (
         <div className="videoFooter">
             <div className="videoFooter__text">
-                <h3>@bipinkarki</h3>
-                <p>This is description</p>
+                <h3>@{channel}</h3>
+                <p>{description}</p>
                 <div className="videoFooter__ticker">
                     <MusicNoteIcon className="videoFooter__icon" />
                     <Ticker
@@ -16,7 +16,7 @@ function VideoFooter() {
                     >
                         {({ index }) => (
                             <>
-                                <p>Yooo what's up!!! </p>
+                                <p>{song}</p>
                             </>
                         )}
 

@@ -2,7 +2,9 @@ import React, { useRef, useState } from 'react'
 import "./Video.css"
 import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
-function Video() {
+function Video({
+    url, channel, description, song, likes, shares, messages
+}) {
     const videoRef = useRef(null);
     const [play, setPlay] = useState(false)
     const onVideoPress = () => {
@@ -20,7 +22,7 @@ function Video() {
         <div className="video">
             <video
                 className="video__player"
-                src="sample.mp4"
+                src={url}
                 loop
                 ref={videoRef}
                 onClick={onVideoPress}
@@ -30,9 +32,17 @@ function Video() {
 
 
             {/* Video Footer */}
-            <VideoFooter  />
+            <VideoFooter 
+            channel={channel} 
+            description={description}
+            song={song}
+              />
             {/* Video Sidebar */}
-            <VideoSidebar />
+            <VideoSidebar 
+            likes={likes} 
+            shares={shares}
+            messages={messages}
+             />
         </div>
     )
 }
